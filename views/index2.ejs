@@ -1,0 +1,25 @@
+
+<% include partials/header %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Search Results... </div>
+    <span>Fetched <b><strong><%= entries %></strong></b> entries in <b><strong><%= time/1000 %></strong></b> seconds</span>
+    <div class="ui top attached segment">
+    <div class="ScrollStyle">
+        <div class="ui divided items">
+                <% blogs.forEach(function(blog){ %>
+                    <div class="item">
+                        <div class="content">
+                            <% blogs1.forEach(function(result){ %>
+                            <div class="meta">
+                                <span><b></b><strong><%= result.toUpperCase() %>  &nbsp:&nbsp&nbsp&nbsp   </strong></b>   <%= blog[result] %></span>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                <% }) %>
+        </div>
+    </div></div>
+</div>
+
+<% include partials/footer %>

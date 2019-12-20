@@ -1,0 +1,18 @@
+<% include partials/header %>
+<html>
+  <body>
+    <div class="ui main text container segment">
+        <div class="ui huge header">Upload File</div>
+        <form class="ui form" action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label>Browse</label>
+                <input type="file" accept=".csv" name="sampleFile">
+            </div>
+            <input class="ui violet big basic button" type="Submit" value="Upload">
+        </form>
+    </div>
+    </form>     
+  </body>
+</html>
+
+<% include partials/footer %>

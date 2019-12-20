@@ -1,0 +1,53 @@
+<% include partials/header %>
+        <div class="ui main text container segment">
+            <div class="ui huge header">Search Parameters</div>
+            <form class="ui form" action="/blogs" method="POST">
+                <div class="field">
+                    <label>q</label>
+                    <input type="text" name="blog[q]" placeholder="key : value">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>fq(field)</label>
+                        <input type="text" name="blog[fq_field]" placeholder="column">
+                    </div>
+                    <div class="field">
+                        <label>fq(value)</label>
+                        <input type="text" name="blog[fq_value]" placeholder="range">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>fl</label>
+                    <input type="text" name="blog[fl]" placeholder="Result Columns">
+                </div>
+                <div class="field">
+                    <label>df</label>
+                    <input type="text" name="blog[df]" placeholder="Search Field">
+                </div>
+                <div class="field">
+                    <label>wt</label>
+                    <input type="text" name="blog[wt]" placeholder="json">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Start</label>
+                      <input type="text" name="blog[start]" placeholder="0">
+                    </div>
+                    <div class="field">
+                        <label>Rows</label>
+                      <input type="text" name="blog[rows]" placeholder="10">
+                    </div>
+                  </div>
+                <span><strong><b>Facet</b></strong></span>
+                <div class="two fields">
+                    <div class="field">
+                      <input type="text" name="blog[f_query]" placeholder="facet.query">
+                    </div>
+                    <div class="field">
+                      <input type="text" name="blog[f_field]" placeholder="facet.field">
+                    </div>
+                  </div>
+                <input class="ui violet big basic button" type="Submit">
+            </form>
+        </div>   
+<% include partials/footer %>

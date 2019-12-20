@@ -1,0 +1,61 @@
+
+<% include partials/header %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Search Results... </div>
+    <span>Fetched <b><strong><%= entries %></strong></b> entries in <b><strong><%= time/1000 %></strong></b> seconds</span>
+    <div class="ui top attached segment">
+        <div class="ScrollStyle">
+        <div class="ui divided items">
+                <% blogs.forEach(function(blog){ %>
+                    <div class="item">
+                        <div class="content">
+                            <% blogs1.forEach(function(result){ %>
+                            <div class="meta">
+                                <span><b></b><strong><%= result.toUpperCase() %>  &nbsp:&nbsp&nbsp&nbsp   </strong></b>   <%= blog[result] %></span>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                <% }) %>
+        </div>
+        </div>
+    </div>
+    <div class="ui huge header">Facet Info... </div>
+    <div class="ui top attached segment">
+        <div class="ScrollStyle">
+        <div class="ui divided items">
+                <% if(query != ""){ %>
+                    <div class="item">
+                        <div class="content">   
+                            <div class="meta">
+                                <span><b></b><strong>QUERY (<%= query %>) resulted in </strong></b>   <%= facet.facet_queries[query] %> <strong>entries.</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                    <% if(field != ""){ %>
+                    <div class="item">
+                        <div class="content">   
+                            <div class="meta">
+                                <span><b></b><strong>SELECTED FIELD is &nbsp&nbsp <%= field %></strong></b></span>
+                            </div>
+                            <div class="meta">
+                                <% var c = 0;%>
+                                <% facet.facet_fields[field].forEach(function(value){ %>
+                                    <span><%= value %> &nbsp&nbsp&nbsp&nbsp</span>
+                                    <% c=c+1 %>
+                                    <% if(c%2==0) { %>
+                                        </br>
+                                    <% } %>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+        </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
